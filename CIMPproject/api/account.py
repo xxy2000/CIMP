@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 import json
-from api.models import User, Notification, News, Paper, Like, Students, Workflow, Workstep
+from api.models import User, Notification, News, Paper, Likes, Students, Workflow, Workstep
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.hashers import make_password
@@ -105,10 +105,9 @@ def deleteone(request):
             if papers:
                 query = Q()
                 for paper in papers:
-                    query |= Q(pid__contains=paper.id)
-                Like.objects.filter(query).delete()
+                    query |= Q(paper=paper)
+                Likes.objects.filter(query).delete()
             papers.delete()
-            Like.objects.filter(uid=user.id).delete()
             if user.usertype in [2000, 3000]:
                 if user.usertype == 2000:
                     students = Students.objects.filter(sid=user.id)
@@ -117,13 +116,13 @@ def deleteone(request):
                 query = Q()
                 if students:
                     for student in students:
-                        s_user = user.objects.filter(id=student.sid)
-                        query |= Q(user__contains=s_user)
+                        s_user = User.objects.get(id=student.sid)
+                        query |= Q(user=s_user)
                     workflows = Workflow.objects.filter(query)
                     query = Q()
                     if workflows:
                         for workflow in workflows:
-                            query |= Q(workflow__contains=workflow)
+                            query |= Q(workflow=workflow)
                         Workstep.objects.filter(query).delete()
                         workflows.delete()
                     students.delete()

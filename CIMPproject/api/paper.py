@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 import json
-from api.models import User, Paper, Like
+from api.models import User, Paper, Likes
 from django.db.models import Q, F
 from django.core.paginator import Paginator, EmptyPage
 from django.db import transaction
@@ -191,7 +191,7 @@ def holdone(request):
         one.status = 2
         one.thumbupcount = 0
         one.save()
-        Like.objects.filter(pid=one.id).delete()
+        Likes.objects.filter(paper=one).delete()
     return JsonResponse({'ret': 0, 'status': one.status})
 
 
@@ -211,7 +211,7 @@ def banone(request):
         one.status = 3
         one.thumbupcount = 0
         one.save()
-        Like.objects.filter(pid=one.id).delete()
+        Likes.objects.filter(paper=one).delete()
     return JsonResponse({'ret': 0, 'status': one.status})
 
 
@@ -246,6 +246,6 @@ def deleteone(request):
         return JsonResponse({'ret': 1, 'msg': '只有管理员/用户作者才能删除论文 (-_-)'})
     # 删除论文的同时，删除所有点赞记录
     with transaction.atomic():
-        Like.objects.filter(pid=one.id).delete()
+        Likes.objects.filter(paper=one).delete()
         one.delete()
     return JsonResponse({'ret': 0})

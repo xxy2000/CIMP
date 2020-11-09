@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 import json
-from api.models import User,Students,Like,Paper
+from api.models import User,Students,Likes,Paper
 from django.db.models import Q,F
 from django.contrib.auth.hashers import make_password
 
@@ -94,9 +94,10 @@ def listteachers(request):
 def thumbuporcancel(request):
     try:
         user_id = request.session['REQUIRED_FIELDS'][1]
+        user = User.objects.get(id=user_id)
         paper_id = request.params['paperid']
         paper = Paper.objects.get(id=paper_id)
-        like_record, b = Like.objects.get_or_create(uid=user_id,pid=paper_id)
+        like_record, b = Likes.objects.get_or_create(user=user, paper=paper)
         if b:
             paper.thumbupcount += 1
         else:

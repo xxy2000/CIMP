@@ -71,12 +71,12 @@ class Paper(models.Model):
     status = models.PositiveIntegerField(default=1)
 
 
-class Like(models.Model):
+class Likes(models.Model):
     # 创建Like表，用于统计论文点赞
-    # 点赞的user.id
-    uid = models.PositiveIntegerField()
-    # 点赞的paper.id
-    pid = models.PositiveIntegerField()
+    # 点赞的user
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    # 点赞的paper
+    paper = models.ForeignKey(Paper, on_delete=models.PROTECT)
 
 
 class Students(models.Model):
