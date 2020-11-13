@@ -40,9 +40,12 @@ class Notification(models.Model):
     # 状态
     status = models.PositiveIntegerField(default=1)
 
+    def __str__(self):
+        return self.title
+
 
 class News(models.Model):
-    # 创建新闻表，里面包含所有的新闻内容，只能由管理员创建新闻
+    # 创建新闻表, 里面包含所有的新闻内容，只能由管理员创建新闻
     # 通知创建时间
     pubdate = models.DateTimeField(default=datetime.datetime.now)
     # 公告名字
@@ -53,6 +56,9 @@ class News(models.Model):
     content = models.CharField(max_length=2000)
     # 状态
     status = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return self.title
 
 
 class Paper(models.Model):
@@ -69,6 +75,9 @@ class Paper(models.Model):
     thumbupcount = models.PositiveIntegerField(default=0)
     # 状态
     status = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return self.title
 
 
 class Likes(models.Model):
@@ -98,6 +107,9 @@ class Workflow(models.Model):
     # 创建日期
     createdate = models.DateTimeField(default=datetime.datetime.now)
 
+    def __str__(self):
+        return self.title
+
 
 class Workstep(models.Model):
     # 创建工作流步骤表，包含毕业工作流的具体步骤内容
@@ -117,3 +129,6 @@ class Workstep(models.Model):
     type = models.CharField(max_length=20)
     # 数据内容
     value = models.CharField(max_length=2000)
+
+    def __str__(self):
+        return self.actionname

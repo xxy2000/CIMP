@@ -2,6 +2,7 @@ from django.http import JsonResponse
 import json
 from api.models import News, Notification, Paper
 from django.db.models import Q, F
+from django.views.decorators.cache import cache_page
 
 
 def dispatcher(request):
@@ -25,6 +26,7 @@ def dispatcher(request):
 
 
 def setconfig(request):
+    # 设置首页显示的文献
     try:
         value = request.params.get('value', None)
         if value:
@@ -38,6 +40,7 @@ def setconfig(request):
 
 
 def getconfig(request):
+    # 获取首页显示的文献
     try:
         f = open('./config.txt', 'r')
         value = f.read()
@@ -48,7 +51,10 @@ def getconfig(request):
         return JsonResponse({'ret': 1, 'msg': '未知错误'})
 
 
+@cache_page(60 * 5)
+# 由于首页经常访问，设置一个5min的缓存
 def gethomepagebyconfig(request):
+    # 首页显示信息
     try:
         f = open('./config.txt', 'r')
         value = json.loads(f.read())

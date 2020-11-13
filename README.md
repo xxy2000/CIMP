@@ -1,5 +1,5 @@
 # CIMP
-## 小白编写的校园信息管理平台
+## 校园信息管理平台
 
 #### 项目介绍
 CIMP实现校园的学生老师管理员账号、通知、新闻、论文管理、毕业设计等数据的发布和管理
@@ -14,5 +14,5 @@ CIMP实现校园的学生老师管理员账号、通知、新闻、论文管理�
 前端内容保存在文件目录内的CIMP文件，打开方式为进入CIMP文件双击“打开前端.bat”。
 
 #### 后端介绍
-本项目通过django开发，代码量为1200行左右，实现了前端要求的所有功能，开发环境为django 3.1.2版本。后端内容保存在文件目录内的CIMPproject文件。测试管理员账号 xxy 老师账号 xxy200 学生账号 xxy300,密码皆为111111
-打开方式为cmd 进入CIMPproject， 输入命令行 python manage.py runserver 8210
+本项目通过django开发，代码量为1200行左右，实现了实战要求的所有功能。采用Function Base View的视图方式处理HTTP请求，开发环境为django 3.1.2版本。后端内容保存在文件目录内的CIMPproject文件。测试管理员账号 xxy 老师账号 xxy200 学生账号 xxy300,密码皆为111111
+打开方式为cmd 进入CIMPproject， 输入命令行 python manage.py runserver 8210。
