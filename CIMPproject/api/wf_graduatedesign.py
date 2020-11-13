@@ -34,7 +34,7 @@ def listbypage(request):
         # 学生查看毕业工作流
         if request.session['REQUIRED_FIELDS'][0] == 2000:
             # 根据自身ID对工作流进行过滤
-            qs = Workflow.objects.filter(user__id__contains=uid).annotate(creator=F('user__id'), creator__realname=
+            qs = Workflow.objects.filter(user__id=uid).annotate(creator=F('user__id'), creator__realname=
             F('user__realname')).values('id', 'creator', 'creator__realname', 'title', 'currentstate', 'createdate')
         # 老师查看毕业工作流
         else:
@@ -45,7 +45,7 @@ def listbypage(request):
                 return JsonResponse({'ret': 0, 'items': [], 'total': 0, 'keywords': ""})
             query = Q()
             for student in students:
-                query |= Q(user__id__contains=student.sid)
+                query |= Q(user__id=student.sid)
             # 根据自己的所有学生ID对工作流进行过滤
             qs = Workflow.objects.filter(query).annotate(creator=F('user__id'), creator__realname=
             F('user__realname')).values('id', 'creator', 'creator__realname', 'title', 'currentstate', 'createdate')
@@ -115,7 +115,8 @@ def getone(request):
   ]
 })
         # 通过ID获取工作流和工作流下属所有的工作步骤,其中worksteps一定得按id顺序排列，不然工作流排序会出现错误
-        workflow = Workflow.objects.get(id=wf_id)
+        # 通过select_related减少查询次数，提升性能
+        workflow = Workflow.objects.select_related('user').get(id=wf_id)
         worksteps = workflow.workstep_set.all().order_by('id')
         # 将工作步骤所需信息添加进workstep对象里
         steps = []
@@ -123,7 +124,6 @@ def getone(request):
             if workstep:
                 steps.append({'id': workstep.id, 'operator__realname': workstep.operator.realname, 'actiondate': workstep.actiondate,
                              'actionname': workstep.actionname, 'nextstate': workstep.nextstate})
-        print(steps)
         # 根据最后一次操作判断接下来的工作流，并填写whaticando
         whaticando = []
         if request.params['withwhatcanido'] == 'true':
@@ -135,7 +135,7 @@ def getone(request):
                     whocan = Students.objects.get(sid=workflow.user.id).Tea.id
                     # 提交毕业设计后面的状态只能跟评分，但是创建/修改主题后面的状态可以有批准/驳回主题，所以需要分开写
                     if last_action == '提交毕业设计':
-                        whaticando =[
+                        whaticando = [
                                  {
                                     "name": '评分',
                                     "submitdata": [
@@ -271,7 +271,7 @@ def stepaction(request):
                 workflow = Workflow.objects.get(id=request.params['wf_id'])
                 actionname = '修改主题'
                 workflow.title = submitdata[0]['value']
-                workflow.currentstate =currentstate
+                workflow.currentstate = currentstate
                 workflow.save()
             nextstate = '主题已创建'
             name = submitdata[1]['name']

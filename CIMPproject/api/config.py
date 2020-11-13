@@ -62,7 +62,7 @@ def gethomepagebyconfig(request):
         info, query = {}, Q()
         if 'news' in value:
             for id in value['news']:
-                query |= Q(id__contains=id)
+                query |= Q(id=id)
             data = News.objects.filter(query).annotate(author=F('user__id'), author__realname=F('user__realname')).values('id', 'pubdate',
             'author', 'author__realname', 'title', 'status')if query else[]
             # 只有status为发布状态的才可以显示在首页
@@ -71,7 +71,7 @@ def gethomepagebyconfig(request):
         if 'notice' in value:
             query = Q()
             for id in value['notice']:
-                query |= Q(id__contains=id)
+                query |= Q(id=id)
             data = Notification.objects.filter(query).annotate(author=F('user__id'), author__realname=F('user__realname')).values('id', 'pubdate',
             'author', 'author__realname', 'title', 'status')if query else[]
             # 只有status为发布状态的才可以显示在首页
@@ -81,7 +81,7 @@ def gethomepagebyconfig(request):
         if 'paper' in value:
             query = Q()
             for id in value['paper']:
-                query |= Q(id__contains=id)
+                query |= Q(id=id)
             data = Paper.objects.filter(query).annotate(author=F('user__id'), author__realname=F('user__realname')).values('id', 'pubdate',
             'author', 'author__realname', 'title', 'status')if query else[]
             # 只有status为发布状态的才可以显示在首页

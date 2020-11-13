@@ -51,7 +51,7 @@ def listbrpage(request, n):
             qs = n.objects.annotate(author=F('user__id'), author__realname=F('user__realname')).values('id', 'pubdate',
             'author', 'author__realname', 'title', 'content', 'status')
         # 只有status=1，处于发布状态的通知才会发布
-        qs = qs.filter(status__contains=1)
+        qs = qs.filter(status=1)
         # 分页处理
         pagesize = request.params['pagesize']
         pagenum = request.params['pagenum']

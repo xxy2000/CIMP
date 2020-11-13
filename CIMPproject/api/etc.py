@@ -28,6 +28,7 @@ def dispatcher(request):
 
 
 def getmyprofile(request):
+    # 获取个人信息
     try:
         id = request.session['REQUIRED_FIELDS'][1]
         if request.session['REQUIRED_FIELDS'][0] == 3000:
@@ -48,6 +49,7 @@ def getmyprofile(request):
 
 
 def setmyprofile(request):
+    # 设置个人信息，学生需要多设置老师选项
     try:
         id = request.session['REQUIRED_FIELDS'][1]
         newdata = request.params['newdata']
@@ -60,7 +62,6 @@ def setmyprofile(request):
         if 'teacherid' in newdata:
             teacher = User.objects.get(id=newdata['teacherid'])
             if teacher and teacher.usertype == 3000:
-                print(111111111111111111)
                 stu = Students.objects.filter(sid=id)
                 if stu:
                     stu[0].Tea = teacher
@@ -76,6 +77,7 @@ def setmyprofile(request):
 
 
 def listteachers(request):
+    # 列出所有的老师，并可以根据keywords进行筛选
     try:
         qs = User.objects.filter(usertype=3000).values('id', 'realname')
         keywords = request.params.get('keywords', None)
@@ -92,6 +94,7 @@ def listteachers(request):
 
 
 def thumbuporcancel(request):
+    # 点赞处理，如果无点赞记录，点赞数+1并多一条记录，反之点赞数-1并少一条记录
     try:
         user_id = request.session['REQUIRED_FIELDS'][1]
         user = User.objects.get(id=user_id)

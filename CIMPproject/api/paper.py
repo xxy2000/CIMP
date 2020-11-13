@@ -51,10 +51,10 @@ def listbrpage(request):
             'author', 'author__realname', 'title', 'content', 'thumbupcount', 'status')
 
         total = qs.count()
-        qs = qs.filter(status__contains=1)
+        qs = qs.filter(status=1)
         pagesize = request.params['pagesize']
         pagenum = request.params['pagenum']
-        keywords = request.params.get('keywords',None)
+        keywords = request.params.get('keywords', None)
         if keywords:
             contains = [Q(title__contains=one) for one in keywords.split(' ')if one]
             query = Q()
