@@ -99,16 +99,8 @@ def deleteone(request):
     try:
         user = User.objects.get(id=user_id)
         with transaction.atomic():
-            Notification.objects.filter(user=user).delete()
-            News.objects.filter(user=user).delete()
-            papers = Paper.objects.filter(user=user)
-            if papers:
-                query = Q()
-                for paper in papers:
-                    query |= Q(paper=paper)
-                Likes.objects.filter(query).delete()
-            papers.delete()
             if user.usertype in [2000, 3000]:
+                # 如果usertype是学生或者老师删除需要额外处理
                 if user.usertype == 2000:
                     students = Students.objects.filter(sid=user.id)
                 else:
@@ -119,12 +111,7 @@ def deleteone(request):
                         s_user = User.objects.get(id=student.sid)
                         query |= Q(user=s_user)
                     workflows = Workflow.objects.filter(query)
-                    query = Q()
-                    if workflows:
-                        for workflow in workflows:
-                            query |= Q(workflow=workflow)
-                        Workstep.objects.filter(query).delete()
-                        workflows.delete()
+                    workflows.delete()
                     students.delete()
             user.delete()
         return JsonResponse({'ret': 0})

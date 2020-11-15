@@ -246,6 +246,5 @@ def deleteone(request):
         return JsonResponse({'ret': 1, 'msg': '只有管理员/用户作者才能删除论文 (-_-)'})
     # 删除论文的同时，删除所有点赞记录
     with transaction.atomic():
-        Likes.objects.filter(paper=one).delete()
         one.delete()
     return JsonResponse({'ret': 0})

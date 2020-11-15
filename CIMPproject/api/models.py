@@ -34,7 +34,7 @@ class Notification(models.Model):
     # 公告名字
     title = models.CharField(max_length=100)
     # 创建者
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     # 内容
     content = models.CharField(max_length=2000)
     # 状态
@@ -51,7 +51,7 @@ class News(models.Model):
     # 公告名字
     title = models.CharField(max_length=100)
     # 创建者
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     # 内容
     content = models.CharField(max_length=2000)
     # 状态
@@ -68,7 +68,7 @@ class Paper(models.Model):
     # 公告名字
     title = models.CharField(max_length=100)
     # 创建者
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     # 内容
     content = models.CharField(max_length=2000)
     # 点赞数
@@ -83,9 +83,9 @@ class Paper(models.Model):
 class Likes(models.Model):
     # 创建Like表，用于统计论文点赞
     # 点赞的user
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     # 点赞的paper
-    paper = models.ForeignKey(Paper, on_delete=models.PROTECT)
+    paper = models.ForeignKey(Paper, on_delete=models.CASCADE)
 
 
 class Students(models.Model):
@@ -99,7 +99,7 @@ class Students(models.Model):
 class Workflow(models.Model):
     # 创建工作流表，包含毕业工作流的工作步骤
     # 创建者
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     # 标题
     title = models.CharField(max_length=100)
     # 状态
@@ -114,9 +114,9 @@ class Workflow(models.Model):
 class Workstep(models.Model):
     # 创建工作流步骤表，包含毕业工作流的具体步骤内容
     # 所属的工作流
-    workflow = models.ForeignKey(Workflow, on_delete=models.PROTECT)
+    workflow = models.ForeignKey(Workflow, on_delete=models.CASCADE)
     # 工作流创建者名
-    operator = models.ForeignKey(User, on_delete=models.PROTECT)
+    operator = models.ForeignKey(User, on_delete=models.CASCADE)
     # 创建时间
     actiondate = models.DateTimeField(default=datetime.datetime.now)
     # 工作流步骤名

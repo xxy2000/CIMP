@@ -161,11 +161,13 @@ def banone(request, n):
 
 
 def publishone(request, n):
+    # 用来解禁一条通知。解禁后的通知，对学生、老师、未登录账号可见，发出该 API 只能是管理员用户。后端要根据session校验。
     nid = request.params['id']
     try:
         one = n.objects.get(id=nid)
     except n.DoesNotExist:
         return JsonResponse({'ret': 1, 'msg': '该通知不存在'})
+    # 解禁通知只需要将status改为3
     one.status = 1
     one.save()
     return JsonResponse({'ret': 0, 'status': one.status})
