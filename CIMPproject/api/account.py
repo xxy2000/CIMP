@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 import json
-from api.models import User, Notification, News, Paper, Likes, Students, Workflow, Workstep
+from api.models import User
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.hashers import make_password
@@ -97,23 +97,8 @@ def deleteone(request):
     user_id = request.params['id']
     # 通过级联删除多个表与user有关的内容
     try:
-        user = User.objects.get(id=user_id)
         with transaction.atomic():
-            if user.usertype in [2000, 3000]:
-                # 如果usertype是学生或者老师删除需要额外处理
-                if user.usertype == 2000:
-                    students = Students.objects.filter(sid=user.id)
-                else:
-                    students = Students.objects.filter(Tea=user)
-                query = Q()
-                if students:
-                    for student in students:
-                        s_user = User.objects.get(id=student.sid)
-                        query |= Q(user=s_user)
-                    workflows = Workflow.objects.filter(query)
-                    workflows.delete()
-                    students.delete()
-            user.delete()
+            User.objects.get(id=user_id).delete()
         return JsonResponse({'ret': 0})
     except Exception as e:
         print(e)

@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 import datetime
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
 # 可以通过 命令 python  manage.py createsuperuser 来创建超级管理员
 
 
@@ -22,6 +24,7 @@ class User(AbstractUser):
     desc = models.CharField(max_length=500, null=True, blank=True)
 
     REQUIRED_FIELDS = ['usertype', 'realname']
+    # 将数据库中表命名为by_user
 
     class Meta:
         db_table = "by_user"
@@ -93,7 +96,12 @@ class Students(models.Model):
     # 创建者ID
     sid = models.PositiveIntegerField(unique=True)
     # 老师
-    Tea = models.ForeignKey(User, on_delete=models.PROTECT)
+    Tea = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    # 通过信号量进行级联删除user.id = sid 的部分
+    @receiver(pre_delete, sender=User)
+    def user_cascade_delete(sender, instance, **kwargs):
+        Students.objects.filter(sid=instance.id).delete()
 
 
 class Workflow(models.Model):
