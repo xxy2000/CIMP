@@ -16,7 +16,7 @@ class User(AbstractUser):
     realname = models.CharField(max_length=30, db_index=True)
     # 学号
     studentno = models.CharField(
-        max_length=10,
+        max_length=50,
         db_index=True,
         null=True, blank=True
     )
@@ -90,6 +90,9 @@ class Likes(models.Model):
     # 点赞的paper
     paper = models.ForeignKey(Paper, on_delete=models.CASCADE)
 
+    class Meta:
+        index_together = ["user", "paper"]
+
 
 class Students(models.Model):
     # 创建Students表用于关联学生和老师
@@ -97,6 +100,9 @@ class Students(models.Model):
     sid = models.PositiveIntegerField(unique=True)
     # 老师
     Tea = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        indexes = [models.Index(fields=['sid'])]
 
     # 通过信号量进行级联删除user.id = sid 的部分
     @receiver(pre_delete, sender=User)

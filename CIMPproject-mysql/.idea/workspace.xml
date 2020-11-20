@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f55f29cb-46de-4e82-ad5c-678753a271ce" name="Default Changelist" comment="" />
+    <list default="true" id="f55f29cb-46de-4e82-ad5c-678753a271ce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CIMPproject-sqlite/CIMPproject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMPproject-sqlite/CIMPproject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CIMPproject-sqlite/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMPproject-sqlite/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CIMPproject-sqlite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMPproject-sqlite/db.sqlite3" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="JupyterTrust" id="88b37c98-4982-496f-9ee9-a3fa610831fb" />
   <component name="ProjectId" id="1kXAAg8rJBa3Cqt80a4QkxENBOw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,6 +70,12 @@
       <workItem from="1605836422283" duration="79000" />
       <workItem from="1605843448225" duration="3445000" />
       <workItem from="1605847507709" duration="23000" />
+      <workItem from="1605862502440" duration="206000" />
+      <workItem from="1605862823368" duration="534000" />
+      <workItem from="1605863482037" duration="286000" />
+      <workItem from="1605863925358" duration="262000" />
+      <workItem from="1605864350964" duration="137000" />
+      <workItem from="1605868075941" duration="135000" />
     </task>
     <servers />
   </component>
