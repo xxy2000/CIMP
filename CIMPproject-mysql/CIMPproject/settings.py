@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'CIMPproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cimp',
+        'NAME': 'api',
         'USER': 'xxy',
         'PASSWORD': 'F503f@305',
         'HOST': 'localhost',

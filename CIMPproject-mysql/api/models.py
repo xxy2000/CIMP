@@ -24,10 +24,6 @@ class User(AbstractUser):
     desc = models.CharField(max_length=500, null=True, blank=True)
 
     REQUIRED_FIELDS = ['usertype', 'realname']
-    # 将数据库中表命名为by_user
-
-    class Meta:
-        db_table = "cimp_user"
 
 
 class Notification(models.Model):
@@ -46,9 +42,6 @@ class Notification(models.Model):
     def __str__(self):
         return self.title
 
-    class Meta:
-        db_table = "cimp_Notification"
-
 
 class News(models.Model):
     # 创建新闻表, 里面包含所有的新闻内容，只能由管理员创建新闻
@@ -65,9 +58,6 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
-
-    class Meta:
-        db_table = "cimp_News"
 
 
 class Paper(models.Model):
@@ -87,9 +77,6 @@ class Paper(models.Model):
 
     def __str__(self):
         return self.title
-
-    class Meta:
-        db_table = "cimp_Paper"
 
 
 class Likes(models.Model):
@@ -155,4 +142,3 @@ class Workstep(models.Model):
 
     def __str__(self):
         return self.actionname
-

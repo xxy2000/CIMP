@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f55f29cb-46de-4e82-ad5c-678753a271ce" name="Default Changelist" comment="">
+    <list default="true" id="988cce2e-bb40-47b8-9cb4-2f3196117e50" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../CIMP/frontend/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMP/frontend/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CIMP/frontend/logs/nginx.pid" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMP/frontend/logs/nginx.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CIMPproject1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f455bec-611c-41cc-96d1-e077d9a657b7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f455bec-611c-41cc-96d1-e077d9a657b7/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CIMPproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CIMPproject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CIMPproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CIMPproject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CIMPproject/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/CIMPproject/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0002_auto_20201120_1143.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0003_auto_20201120_1656.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0004_auto_20201120_1712.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0005_auto_20201120_1715.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0006_auto_20201120_1721.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0007_auto_20201120_1727.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0008_auto_20201120_1829.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CIMPproject-sqlite/CIMPproject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMPproject-sqlite/CIMPproject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CIMPproject-sqlite/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMPproject-sqlite/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CIMPproject-sqlite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMPproject-sqlite/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +36,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JupyterTrust" id="88b37c98-4982-496f-9ee9-a3fa610831fb" />
-  <component name="ProjectId" id="1kXAAg8rJBa3Cqt80a4QkxENBOw" />
+  <component name="ProjectId" id="1kaKk79oibc4AeRZ5plA1WSH46F" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,16 +46,18 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\projects\CIMPproject1" />
+      <recent name="D:\projects\CIMPproject\api" />
+      <recent name="D:\projects\CIMPproject" />
+      <recent name="D:\projects\CIMPproject\CIMPproject" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="CIMPproject1" type="Python.DjangoServer" factoryName="Django server">
-      <module name="CIMPproject1" />
+    <configuration name="bysms" type="Python.DjangoServer" factoryName="Django server">
+      <module name="CIMPproject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -62,20 +83,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f55f29cb-46de-4e82-ad5c-678753a271ce" name="Default Changelist" comment="" />
-      <created>1605836421227</created>
+      <changelist id="988cce2e-bb40-47b8-9cb4-2f3196117e50" name="Default Changelist" comment="" />
+      <created>1605933402067</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1605836421227</updated>
-      <workItem from="1605836422283" duration="79000" />
-      <workItem from="1605843448225" duration="3445000" />
-      <workItem from="1605847507709" duration="23000" />
-      <workItem from="1605862502440" duration="206000" />
-      <workItem from="1605862823368" duration="534000" />
-      <workItem from="1605863482037" duration="286000" />
-      <workItem from="1605863925358" duration="262000" />
-      <workItem from="1605864350964" duration="137000" />
-      <workItem from="1605868075941" duration="135000" />
+      <updated>1605933402067</updated>
+      <workItem from="1605933403123" duration="82000" />
+      <workItem from="1605933546300" duration="1026000" />
+      <workItem from="1605934700806" duration="762000" />
+      <workItem from="1605940719540" duration="77000" />
+      <workItem from="1605940846110" duration="912000" />
+      <workItem from="1605942012552" duration="276000" />
     </task>
     <servers />
   </component>
@@ -83,13 +101,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="722" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605843752301">
+    <state x="722" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605933929491">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="722" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605843752301" />
-    <state x="548" y="230" width="439" height="332" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1605846634067">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="548" y="230" width="439" height="332" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824@0.0.1536.824" timestamp="1605846634067" />
+    <state x="722" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605933929491" />
   </component>
 </project>
