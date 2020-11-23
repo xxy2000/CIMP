@@ -3,29 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="988cce2e-bb40-47b8-9cb4-2f3196117e50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../CIMP/frontend/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMP/frontend/logs/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CIMP/frontend/logs/nginx.pid" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMP/frontend/logs/nginx.pid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CIMPproject1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f455bec-611c-41cc-96d1-e077d9a657b7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f455bec-611c-41cc-96d1-e077d9a657b7/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CIMPproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CIMPproject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CIMPproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CIMPproject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CIMPproject/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/CIMPproject/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0002_auto_20201120_1143.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0003_auto_20201120_1656.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0004_auto_20201120_1712.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0005_auto_20201120_1715.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0006_auto_20201120_1721.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0007_auto_20201120_1727.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0008_auto_20201120_1829.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CIMPproject-sqlite/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CIMPproject-sqlite/api/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +74,8 @@
       <workItem from="1605940719540" duration="77000" />
       <workItem from="1605940846110" duration="912000" />
       <workItem from="1605942012552" duration="276000" />
+      <workItem from="1606098723921" duration="49000" />
+      <workItem from="1606098981030" duration="616000" />
     </task>
     <servers />
   </component>

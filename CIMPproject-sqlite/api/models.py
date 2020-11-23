@@ -91,6 +91,7 @@ class Likes(models.Model):
     paper = models.ForeignKey(Paper, on_delete=models.CASCADE)
 
     class Meta:
+        unique_together = ["user", "paper"]
         index_together = ["user", "paper"]
 
 
